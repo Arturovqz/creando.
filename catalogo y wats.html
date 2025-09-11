@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Abarrotes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Encabezado con degradado */
+    header {
+      background: linear-gradient(135deg, #198754, #28a745);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    /* Estilo de tarjetas */
+    .card {
+      border: none;
+      border-radius: 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+    /* Botón de WhatsApp */
+    .btn-whatsapp {
+      background-color: #25d366;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe5b;
+    }
+    /* Footer */
+    footer {
+      background: #222;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="text-white text-center p-4">
+    <h1 class="fw-bold">🛒 Tienda de Abarrotes "Doña María"</h1>
+    <p class="mb-0">¡Los mejores productos para tu hogar!</p>
+  </header>
+
+  <!-- Catálogo -->
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- Producto 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <img src="arroz.jpg" class="card-img-top" alt="Arroz">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Arroz 1kg</h5>
+            <p class="text-success fs-5">$25 MXN</p>
+            <a href="https://wa.me/5215512345678?text=Quiero%20comprar%20Arroz%201kg" target="_blank" class="btn btn-whatsapp">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="20" alt="WhatsApp"> Pedir
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <img src="azucar.jpg" class="card-img-top" alt="Azúcar">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Azúcar 1kg</h5>
+            <p class="text-success fs-5">$28 MXN</p>
+            <a href="https://wa.me/5215512345678?text=Quiero%20comprar%20Azúcar%201kg" target="_blank" class="btn btn-whatsapp">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="20" alt="WhatsApp"> Pedir
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-white text-center p-4">
+    <p class="mb-1">📍 Calle Principal #123, Ciudad</p>
+    <p class="mb-0">📞 55-1234-5678</p>
+  </footer>
+</body>
+</html>
