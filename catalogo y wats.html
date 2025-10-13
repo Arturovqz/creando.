@@ -1,91 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda de Abarrotes</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Encabezado con degradado */
-    header {
-      background: linear-gradient(135deg, #198754, #28a745);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    /* Estilo de tarjetas */
-    .card {
-      border: none;
-      border-radius: 15px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    }
-    /* Botón de WhatsApp */
-    .btn-whatsapp {
-      background-color: #25d366;
-      border: none;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-whatsapp:hover {
-      background-color: #1ebe5b;
-    }
-    /* Footer */
-    footer {
-      background: #222;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creaando - Personalización de Ropa</title>
+    <meta name="description" content="Creaando - Personalización de playeras, sudaderas, uniformes y más. Diseños únicos para empresas, equipos y particulares. Calidad, creatividad y estilo en cada prenda.">
+    <meta name="keywords" content="personalización de ropa, playeras personalizadas, sudaderas personalizadas, uniformes empresariales, estampado de camisetas, Creaando, ropa personalizada México">
+    <meta name="author" content="Creaando">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #121212, #1f1f2e);
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #5b0be3, #8a2be2);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #9a6bff; }
+            to { text-shadow: 0 0 25px #caa7ff; }
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            filter: brightness(0.6);
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-content h2 {
+            font-size: 2.8em;
+            color: #fff;
+            text-shadow: 0 0 20px #6c63ff;
+        }
+
+        .productos {
+            background: #181827;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .productos h2 {
+            color: #b28cff;
+            font-family: 'Pacifico', cursive;
+            font-size: 2.3em;
+            margin-bottom: 30px;
+        }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .producto {
+            background: linear-gradient(145deg, #262640, #1d1d30);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .producto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 18px rgba(134, 103, 255, 0.6);
+        }
+
+        .producto img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .quienes-somos {
+            background: linear-gradient(135deg, #1e1e2f, #292940);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .quienes-somos h2 {
+            font-family: 'Pacifico', cursive;
+            color: #b28cff;
+            font-size: 2.3em;
+            margin-bottom: 20px;
+        }
+
+        .quienes-somos p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ddd;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .contacto {
+            background: linear-gradient(135deg, #1b1b2d, #2d2d44);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contacto h2 {
+            color: #b28cff;
+            font-family: 'Pacifico', cursive;
+            font-size: 2.3em;
+            margin-bottom: 20px;
+        }
+
+        .contacto a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #5b0be3, #8a2be2);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contacto a:hover {
+            background: linear-gradient(135deg, #7c4dff, #9a6bff);
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #0e0e15;
+            padding: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            .hero-content h2 { font-size: 1.8em; }
+        }
+    </style>
 </head>
 <body>
-  <!-- Encabezado -->
-  <header class="text-white text-center p-4">
-    <h1 class="fw-bold">🛒 Tienda de Abarrotes "Doña María"</h1>
-    <p class="mb-0">¡Los mejores productos para tu hogar!</p>
-  </header>
+    <header>
+        <h1>Creando</h1>
+        <p>Personalizamos tus ideas en ropa y más</p>
+    </header>
 
-  <!-- Catálogo -->
-  <main class="container my-5">
-    <div class="row g-4">
-      <!-- Producto 1 -->
-      <div class="col-md-4">
-        <div class="card h-100 text-center">
-          <img src="arroz.jpg" class="card-img-top" alt="Arroz">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Arroz 1kg</h5>
-            <p class="text-success fs-5">$25 MXN</p>
-            <a href="https://wa.me/5215512345678?text=Quiero%20comprar%20Arroz%201kg" target="_blank" class="btn btn-whatsapp">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="20" alt="WhatsApp"> Pedir
-            </a>
-          </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Personaliza playeras, sudaderas y uniformes</h2>
         </div>
-      </div>
+    </section>
 
-      <!-- Producto 2 -->
-      <div class="col-md-4">
-        <div class="card h-100 text-center">
-          <img src="azucar.jpg" class="card-img-top" alt="Azúcar">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Azúcar 1kg</h5>
-            <p class="text-success fs-5">$28 MXN</p>
-            <a href="https://wa.me/5215512345678?text=Quiero%20comprar%20Azúcar%201kg" target="_blank" class="btn btn-whatsapp">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="20" alt="WhatsApp"> Pedir
-            </a>
-          </div>
+    <section class="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="grid-productos">
+            <div class="producto"><img src="https://via.placeholder.com/300x300?text=Playera+1"><p>Playera personalizada</p></div>
+            <div class="producto"><img src="https://via.placeholder.com/300x300?text=Sudadera+1"><p>Sudadera con diseño</p></div>
+            <div class="producto"><img src="https://via.placeholder.com/300x300?text=Uniforme+1"><p>Uniforme empresarial</p></div>
+            <div class="producto"><img src="https://via.placeholder.com/300x300?text=Playera+2"><p>Diseños creativos</p></div>
+<div class="producto"><img src="https://via.placeholder.com/300x300?text=Playera+1"><p>Playera personalizada</p></div>
+<div class="producto"><img src="https://via.placeholder.com/300x300?text=Playera+1"><p>Playera personalizada</p></div>
+            <div class="producto"><img src="https://via.placeholder.com/300x300?text=Sudadera+2"><p>Sudaderas modernas</p></div>
+            <div class="producto"><img src="https://via.placeholder.com/300x300?text=Uniforme+2"><p>Uniformes personalizados</p></div>
         </div>
-      </div>
-    </div>
-  </main>
+    </section>
 
-  <!-- Footer -->
-  <footer class="text-white text-center p-4">
-    <p class="mb-1">📍 Calle Principal #123, Ciudad</p>
-    <p class="mb-0">📞 55-1234-5678</p>
-  </footer>
+    <section class="quienes-somos">
+        <h2>¿Quiénes Somos?</h2>
+        <p>En <strong>Creaando</strong> convertimos tus ideas en prendas únicas. Nos especializamos en personalización de playeras, sudaderas, uniformes y mucho más, siempre buscando la mejor calidad y estilo. Nuestro objetivo es ayudarte a destacar con diseños que te representen. Ofrecemos productos y servicios de impresión textil, bordado y sublimado para empresas, escuelas y particulares.</p>
+    </section>
+
+    <section class="contacto">
+        <h2>Contáctanos</h2>
+        <p><strong>Dirección:</strong> Calle Ejemplo #123, Ciudad, México</p>
+        <p><strong>Teléfono:</strong> +52 1 555 123 4567</p>
+        <p><strong>Email:</strong> info@creaando.com</p>
+        <a href="https://wa.me/521XXXXXXXXXX" target="_blank">WhatsApp</a>
+        <a href="mailto:info@creaando.com">Correo</a>
+        <a href="https://facebook.com/creaando" target="_blank">Facebook</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Creaando | Todos los derechos reservados | Personalización de ropa, playeras, sudaderas y uniformes en México</p>
+    </footer>
 </body>
 </html>
