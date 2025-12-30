@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creando - Personalización de Ropa</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Creando - Personalización de playeras, sudaderas, uniformes y más. Diseños únicos para empresas, equipos y particulares. Calidad, creatividad y estilo en cada prenda." />
+  <meta name="keywords" content="personalización de ropa, playeras personalizadas, sudaderas personalizadas, uniformes empresariales, estampado de camisetas, Creaando, ropa personalizada México" />
+  <meta name="author" content="Creaando" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #121212, #1f1f2e);
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #5b0be3, #8a2be2);
+      padding: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #9a6bff; }
+      to { text-shadow: 0 0 25px #caa7ff; }
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .hero-content h2 {
+      font-size: 2.8em;
+      color: #fff;
+      text-shadow: 0 0 20px #6c63ff;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .productos {
+      background: #181827;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .productos h2 {
+      color: #b28cff;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.3em;
+      margin-bottom: 30px;
+    }
+
+    .grid-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .producto {
+      background: linear-gradient(145deg, #262640, #1d1d30);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .producto:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 18px rgba(134, 103, 255, 0.6);
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .quienes-somos {
+      background: linear-gradient(135deg, #1e1e2f, #292940);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .quienes-somos h2 {
+      font-family: 'Pacifico', cursive;
+      color: #b28cff;
+      font-size: 2.3em;
+      margin-bottom: 20px;
+    }
+
+    .quienes-somos p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #ddd;
+      line-height: 1.8;
+      font-size: 1.1em;
+    }
+
+    .contacto {
+      background: linear-gradient(135deg, #1b1b2d, #2d2d44);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contacto h2 {
+      color: #b28cff;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.3em;
+      margin-bottom: 20px;
+    }
+
+    .contacto p {
+      color: #ddd;
+      margin-bottom: 8px;
+    }
+
+    .contacto a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #5b0be3, #8a2be2);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .contacto a:hover {
+      background: linear-gradient(135deg, #7c4dff, #9a6bff);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #0e0e15;
+      padding: 20px;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8em; }
+      .hero-content h2 { font-size: 1.8em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Creaando</h1>
+    <p>Personalizamos tus ideas en ropa y más</p>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Personaliza playeras, sudaderas y uniformes</h2>
+    </div>
+  </section>
+
+  <section class="productos">
+    <h2>Nuestros Productos</h2> 
+    <div class="grid-productos">
+      <div class="producto"><img src="https://github.com/Arturovqz/Creandopagina/blob/main/Gemini_Generated_Image_u46zlgu46zlgu46z.png?raw=true" alt="Sudaderas personalizada"><p>Sudaderas personalizada</p></div>
+      <div class="producto"><img src="https://github.com/Arturovqz/Creandopagina/blob/main/Gemini_Generated_Image_9hys5c9hys5c9hys.png?raw=true" alt="Tazas Personalizadas"><p>Tazas Personalizadas</p></div>
+      <div class="producto"><img src="https://github.com/Arturovqz/Creandopagina/blob/main/Gemini_Generated_Image_6cknem6cknem6ckn.png?raw=true" alt="Playeras Personalizadas"><p>Playeras Personalizadas</p></div>
+      <div class="producto"><img src="https://github.com/Arturovqz/Creandopagina/blob/main/Gemini_Generated_Image_6dtr2u6dtr2u6dtr.png?raw=true" alt="Polos Empresariales"><p>Polos Empresariales</p></div>
+      
+    </div>
+  </section>
+
+  <section class="quienes-somos">
+    <h2>¿Quiénes Somos?</h2>
+    <p>En <strong>Creando</strong> convertimos tus ideas en prendas únicas. Nos especializamos en personalización de playeras, sudaderas, uniformes y más, buscando siempre la mejor calidad y estilo. También sublimado para empresas, escuelas y particulares.</p>
+  </section>
+
+  <section class="contacto">
+    <h2>Contáctanos</h2>
+    <p><strong>Teléfono:</strong> 5625297620</p>
+    <p><strong>Email:</strong> 313428ar@gmail.com</p>
+    <a href="https://wa.me/5625297620" target="_blank">WhatsApp</a>
+    <a href="mailto:313428ar@gmail.com">Correo</a>
+    
+  </section>
+
+  <footer>
+    <p>© 2025 Creaando | Todos los derechos reservados | Personalización de ropa, playeras, sudaderas y uniformes en México</p>
+  </footer>
+</body>
+</html>
